@@ -1,0 +1,6 @@
+C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\bin\Debug\ChatLibrary.dll
+C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\bin\Debug\ChatLibrary.pdb
+C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\obj\Debug\ChatLibrary.csprojAssemblyReference.cache
+C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\obj\Debug\ChatLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\obj\Debug\ChatLibrary.dll
+C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\obj\Debug\ChatLibrary.pdb

@@ -1,0 +1,9 @@
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\bin\Debug\ChatWPFServer.exe.config
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\bin\Debug\ChatWPFServer.exe
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\bin\Debug\ChatWPFServer.pdb
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\bin\Debug\ChatLibrary.dll
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\bin\Debug\ChatLibrary.pdb
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.csproj.CoreCompileInputs.cache
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.csproj.CopyComplete
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.exe
+C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.pdb

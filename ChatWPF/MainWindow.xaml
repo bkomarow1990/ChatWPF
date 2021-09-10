@@ -1,0 +1,62 @@
+﻿<Window x:Class="ChatWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatWPF"
+        mc:Ignorable="d"
+        BorderThickness="1"
+        BorderBrush="Red"
+        Title="MainWindow" Height="450" Width="800" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>-->
+        <Grid Grid.Column="1">
+            <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="messagesListBox" Grid.Row="0"></ListBox>
+            <TextBox ToolTip="Enter Message" BorderThickness="2" Tag="Enter Message" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Name="messageTxtBox"></TextBox>
+            
+
+            
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <DockPanel>
+                <Label Grid.Row="0" DockPanel.Dock="Top">Users:</Label>
+                <ListBox x:Name="usersListBox" DockPanel.Dock="Top"></ListBox>
+                    
+                </DockPanel>
+                <Button x:Name="sendBtn" Style="{StaticResource TabButtonLast}" DockPanel.Dock="Top" Grid.Row="1" Click="sendBtn_Click">Send</Button>
+            </Grid>
+        </Grid>
+        <DockPanel Grid.Column="0" LastChildFill="False">
+            <Label DockPanel.Dock="Top">Username:</Label>
+            <TextBox x:Name="usernameTxtBox" DockPanel.Dock="Top">Enter username </TextBox>
+            <Label DockPanel.Dock="Top">IP: </Label>
+            <TextBox x:Name="ipTxtBox" DockPanel.Dock="Top">127.0.0.1</TextBox>
+            <Label DockPanel.Dock="Top">Port: </Label>
+            <TextBox x:Name="portTxtBox" DockPanel.Dock="Top">7777</TextBox>
+            <ComboBox DockPanel.Dock="Top" Name="colorsComboBox"></ComboBox>
+            <Button x:Name="joinBtn" DockPanel.Dock="Top" Margin="10,15,10,0" Click="joinBtn_Click">JOIN</Button>
+            <Button x:Name="leaveBtn" DockPanel.Dock="Top" Margin="10,15,10,0">LEAVE</Button>
+        </DockPanel>
+    </Grid>
+</Window>
