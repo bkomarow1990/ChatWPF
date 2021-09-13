@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatLibrary
 {
+    [Serializable]
     public class MessageInfo
     {
         public string Message { get; set; }

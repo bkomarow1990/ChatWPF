@@ -7,3 +7,4 @@ C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.cspro
 C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.csproj.CopyComplete
 C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.exe
 C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.pdb
+C:\Users\Gnidez\Source\Repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.csprojAssemblyReference.cache

@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,6 +26,7 @@ namespace ChatWPF
     public partial class MainWindow : Window
     {
         string username = String.Empty;
+        static AutoResetEvent mre = new AutoResetEvent(false);
         public MainWindow()
         {
             InitializeComponent();
@@ -37,28 +39,19 @@ namespace ChatWPF
         IPEndPoint endPoint = null;
         NetworkStream stream = null;
         TcpClient client = new TcpClient();
-        private void GetData() {
+        private async Task<MessageInfo> GetData() {
             while (client.Connected)
             {
-                MessageTransferInfo info = null; 
+                MessageInfo info = null; 
                 BinaryFormatter serializer = new BinaryFormatter();
-                info = (MessageTransferInfo)serializer.Deserialize(stream);
-                switch (info.Action)
-                {
-                    case Actions.JOIN:
-                        break;
-                    case Actions.LEAVE:
-                        break;
-                    case Actions.SEND:
-                        messagesListBox.Items.Add(info);
-                        break;
-                    default:
-                        break;
-                }
-                
+                //mre.WaitOne();
+                info = await (MessageInfo)serializer.Deserialize(client.GetStream());
+                messagesListBox.Items.Add(info);
+                return info;
+                //Dispatcher.Invoke(() => { messagesListBox.Items.Add(info); });
             }
         }
-        private void joinBtn_Click(object sender, RoutedEventArgs e)
+        private async void joinBtn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -70,7 +63,7 @@ namespace ChatWPF
                 username = usernameTxtBox.Text;
                 MessageTransferInfo info = new MessageTransferInfo { Action = Actions.JOIN, Username = username };
                 stream = client.GetStream();
-                Task.Run(GetData);
+                await GetData();
                 // створюємо клас, який містить інформацію про файл
             }
             catch (Exception ex)
@@ -94,11 +87,12 @@ namespace ChatWPF
                 // виконуємо підключення
                 MessageTransferInfo info = new MessageTransferInfo { Message = messageTxtBox.Text, Username = usernameTxtBox.Text, Action = Actions.SEND };
                 BinaryFormatter serializer = new BinaryFormatter();
-                
-                    // серіалізуємо об'єкт класа
-                    // та відправляємо його на сервер
-                    serializer.Serialize(stream, info);
-                
+
+                // серіалізуємо об'єкт класа
+                // та відправляємо його на сервер
+                mre.Reset();
+                serializer.Serialize(client.GetStream(), info);
+                mre.Set();
             }
             catch (Exception ex)
             {

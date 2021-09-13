@@ -31,23 +31,24 @@ namespace ChatWPFServer
         }
         static void Send(string userName, string message) {
             MessageInfo messageInfo = new MessageInfo { Message = message, Time = DateTime.Now, UserName = userName };
-            foreach (TcpClient client in clientsEndPoints)
+            BinaryFormatter serializer = new BinaryFormatter();
+            foreach (var client in clientsEndPoints)
             {
-                using (NetworkStream stream = client.GetStream())
+                using (NetworkStream stream = client.Value.GetStream())
                 {
                     // серіалізуємо об'єкт класа
                     // та відправляємо його на сервер
-                    serializer.Serialize(stream, info);
+                    serializer.Serialize(stream, messageInfo);
                 }
             }
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Sended!");
+            Console.WriteLine($"Sended! {messageInfo.Time} at {messageInfo.Time}");
         }
         static void Main(string[] args)
         {
             IPEndPoint localEndPoint = new IPEndPoint(iPAddress, port);
             IPEndPoint clientSEndPoint = new IPEndPoint(IPAddress.Any, 0);
-            NetworkStream stream = null;
+            //NetworkStream stream = null;
             
             // створюємо екземпляр сервера вказуючи кінцеву точку для приєднання
             TcpListener server = new TcpListener(localEndPoint);
