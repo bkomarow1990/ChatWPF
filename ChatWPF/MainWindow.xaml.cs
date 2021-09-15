@@ -26,7 +26,7 @@ namespace ChatWPF
     public partial class MainWindow : Window
     {
         string username = String.Empty;
-        static AutoResetEvent mre = new AutoResetEvent(false);
+        //static AutoResetEvent mre = new AutoResetEvent(false);
         public MainWindow()
         {
             InitializeComponent();
@@ -40,17 +40,38 @@ namespace ChatWPF
         NetworkStream stream = null;
         TcpClient client = new TcpClient();
         private async Task<MessageInfo> GetData() {
-            while (client.Connected)
+            while (true)
             {
-                MessageInfo info = null; 
-                BinaryFormatter serializer = new BinaryFormatter();
-                //mre.WaitOne();
-                info = await (MessageInfo)serializer.Deserialize(client.GetStream());
-                messagesListBox.Items.Add(info);
-                return info;
-                //Dispatcher.Invoke(() => { messagesListBox.Items.Add(info); });
+                //MessageInfo info = await GetResponse();
+                messagesListBox.Items.Add(await GetResponse());
+                //    BinaryFormatter serializer = new BinaryFormatter();
+                //    //mre.WaitOne();
+                //    info = await (MessageInfo)serializer.Deserialize(client.GetStream());
+                //    messagesListBox.Items.Add(info);
+                //    return info; 
             }
+            //while (client.Connected)
+            //{
+            //    MessageInfo info = null; 
+            //    BinaryFormatter serializer = new BinaryFormatter();
+            //    //mre.WaitOne();
+            //    info = await (MessageInfo)serializer.Deserialize(client.GetStream());
+            //    messagesListBox.Items.Add(info);
+            //    return info;
+            //    //Dispatcher.Invoke(() => { messagesListBox.Items.Add(info); });
+            //}
         }
+
+        private Task<MessageInfo> GetResponse()
+        {
+            return Task.Run(() =>
+            {
+                NetworkStream ns = client.GetStream();
+                BinaryFormatter formatter = new BinaryFormatter();
+                return (MessageInfo)formatter.Deserialize(ns);
+            });
+        }
+
         private async void joinBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -62,7 +83,7 @@ namespace ChatWPF
                 client.Connect(endPoint);
                 username = usernameTxtBox.Text;
                 MessageTransferInfo info = new MessageTransferInfo { Action = Actions.JOIN, Username = username };
-                stream = client.GetStream();
+                //stream = client.GetStream();
                 await GetData();
                 // створюємо клас, який містить інформацію про файл
             }
@@ -90,9 +111,9 @@ namespace ChatWPF
 
                 // серіалізуємо об'єкт класа
                 // та відправляємо його на сервер
-                mre.Reset();
+                //mre.Reset();
                 serializer.Serialize(client.GetStream(), info);
-                mre.Set();
+                //mre.Set();
             }
             catch (Exception ex)
             {

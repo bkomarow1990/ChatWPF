@@ -8,3 +8,13 @@ C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.cspro
 C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.exe
 C:\Users\Gnidez\source\repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.pdb
 C:\Users\Gnidez\Source\Repos\ChatWPF\ChatWPFServer\obj\Debug\ChatWPFServer.csprojAssemblyReference.cache
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\bin\Debug\ChatWPFServer.exe.config
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\bin\Debug\ChatWPFServer.exe
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\bin\Debug\ChatWPFServer.pdb
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\bin\Debug\ChatLibrary.dll
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\bin\Debug\ChatLibrary.pdb
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\obj\Debug\ChatWPFServer.csprojAssemblyReference.cache
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\obj\Debug\ChatWPFServer.csproj.CoreCompileInputs.cache
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\obj\Debug\ChatWPFServer.csproj.CopyComplete
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\obj\Debug\ChatWPFServer.exe
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatWPFServer\obj\Debug\ChatWPFServer.pdb

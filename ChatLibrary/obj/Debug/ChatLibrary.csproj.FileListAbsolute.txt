@@ -4,3 +4,9 @@ C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\obj\Debug\ChatLibrary.csprojAss
 C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\obj\Debug\ChatLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\obj\Debug\ChatLibrary.dll
 C:\Users\Gnidez\source\repos\ChatWPF\ChatLibrary\obj\Debug\ChatLibrary.pdb
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatLibrary\bin\Debug\ChatLibrary.dll
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatLibrary\bin\Debug\ChatLibrary.pdb
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatLibrary\obj\Debug\ChatLibrary.csprojAssemblyReference.cache
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatLibrary\obj\Debug\ChatLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatLibrary\obj\Debug\ChatLibrary.dll
+C:\Users\Gnidez\Source\Repos\ChatWPF2\ChatLibrary\obj\Debug\ChatLibrary.pdb
